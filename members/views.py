@@ -3,6 +3,9 @@ from .models import Member
 
 # Create your views here.
 
+def home(request):
+    return render(request, "home.html")
+
 def members(request):
     mymembers = Member.objects.all()
     context = {
@@ -17,5 +20,8 @@ def details(request, member_id):
     }
     return render(request, "details.html", context)
 
-def home(request):
-    return render(request, "home.html")
+def testing(request):
+    context = {
+        'fruits': ['apple', 'banana', 'cherry', 'date', 'elderberry']
+    }
+    return render(request, "template.html", context)
