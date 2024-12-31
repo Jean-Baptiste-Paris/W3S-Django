@@ -16,3 +16,6 @@ def details(request, member_id):
         'mymember': mymember
     }
     return render(request, "details.html", context)
+
+def home(request):
+    return render(request, "home.html")
