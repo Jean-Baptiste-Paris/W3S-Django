@@ -1,6 +1,11 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from .models import Member
 
 # Create your views here.
 
 def members(request):
-    return render(request, "base.html")
+    mymembers = Member.objects.all()
+    context = {
+        'mymembers': mymembers
+    }
+    return render(request, "all_members.html", context)
