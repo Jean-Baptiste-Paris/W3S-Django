@@ -5,9 +5,45 @@
 {% endblock %}
 
 {% block content %}
-    {% for x in fruits %}
-    <h1>{{ x }}</h1>
-    {% endfor %}
+    <h2>Members</h2>
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        {% for x in mymembers %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
-    <p>In views.py you can see what the fruits variable looks like.</p>
+    <h2>QuerySets</h2>
+    <h3>All Members</h3>
+    {{ mymembers }}
+    <h3>Values</h3>
+    {{ values }}
+
+    <h2>Filtering</h2>
+    <h3>Firstnames</h3>
+    {{ firstnames }}
+    <h3>Firstnames (Flat)</h3>
+    {{ firstnamesFlat }}
+    <h3>Specific rows</h3>
+    <p>Bob OR Linda</p>
+    {{ bobOrLinda }}
+    <p>Firstname starts with L</p>
+    {{ startsWithL }}
+
+    <h2>Sorting</h2>
+    <h3>Ascending</h3>
+    {{ sortedMembers }}
+    <h3>Descending</h3>
+    {{ sortedMembersDesc }}
+    <h3>Multisort</h3>
+    {{ multisort }}
+
 {% endblock %}
