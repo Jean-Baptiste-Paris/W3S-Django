@@ -1,9 +1,10 @@
-<header class="container">
-    <h1>My Tennis Club</h1>
+<header class="topnav">
+    <h1>My Burger Club</h1>
     <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">HOME</a></li>
-            <li><a href="{% url 'members' %}">MEMBERS</a></li>
-        </ul>
+        <a href="{% url 'home' %}">HOME</a>
+        <span> | </span>
+        <a href="{% url 'members' %}">MEMBERS</a>
+        <span> | </span>
+        <a href="{% url 'testing' %}">TESTING</a>
     </nav>
 </header>

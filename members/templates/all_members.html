@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 
 {% block title %}
-    My Tennis Club - All Members
+    My Burger Club - All Members
 {% endblock %}
 
 {% block content %}
+<div class="mycard">
     <h2>All Members</h2>
     <ul>
         {% for x in mymembers %}
-          <li><a href="./{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+          <li onclick="window.location = '{{ x.id }}'">{{ x.firstname }} {{ x.lastname }}</li>
         {% endfor %}
     </ul>
+</div>
 {% endblock %}
